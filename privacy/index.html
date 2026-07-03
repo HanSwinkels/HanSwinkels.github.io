@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — Arras</title>
   <meta name="description" content="Privacy policy for Arras, the darts scoring and training app." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%230A84FF'/><circle cx='16' cy='16' r='9' fill='white'/><circle cx='16' cy='16' r='5' fill='%23FF2D78'/></svg>" />
   <style>
     /* Arras brand tokens — mirrors src/lib/theme (arras preset + iOS semantic grays). */
     :root {
@@ -56,8 +56,9 @@
       width: 56px; height: 56px; border-radius: 28px;
       background: rgba(255, 255, 255, 0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 28px; margin-bottom: 16px;
+      margin-bottom: 16px; color: var(--on-gradient);
     }
+    .hero .icon svg { width: 28px; height: 28px; }
     .eyebrow {
       font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
       text-transform: uppercase; color: var(--on-gradient-dim); margin-bottom: 6px;
@@ -81,8 +82,10 @@
     .glance-row .dot {
       flex: none; width: 32px; height: 32px; border-radius: 16px;
       background: color-mix(in srgb, var(--primary) 14%, transparent);
-      display: flex; align-items: center; justify-content: center; font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
     }
+    .glance-row .dot svg { width: 16px; height: 16px; }
 
     section { margin-bottom: 32px; }
     h2 {
@@ -108,17 +111,57 @@
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="icon">🎯</div>
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5.5" />
+          <circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none" />
+        </svg>
+      </div>
       <div class="eyebrow">Arras</div>
       <h1>Privacy Policy</h1>
       <div class="date">Effective 3 July 2026</div>
     </header>
 
     <div class="glance" aria-label="Summary">
-      <div class="glance-row"><span class="dot">📱</span>Your matches, profiles and training data live on your device</div>
-      <div class="glance-row"><span class="dot">☁️</span>Optional sync goes to your own private iCloud — not to us</div>
-      <div class="glance-row"><span class="dot">🚫</span>No accounts, no ads, no tracking, no analytics</div>
-      <div class="glance-row"><span class="dot">💳</span>Purchases are handled by Apple; we never see payment details</div>
+      <div class="glance-row">
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+            <line x1="10.5" y1="18.2" x2="13.5" y2="18.2" />
+          </svg>
+        </span>
+        Your matches, profiles and training data live only on your device
+      </div>
+      <div class="glance-row">
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.8 L19.5 5.6 V11 C19.5 16 16.4 19.7 12 21.2 C7.6 19.7 4.5 16 4.5 11 V5.6 Z" />
+            <path d="M8.8 11.6 L11 13.8 L15.2 9.4" />
+          </svg>
+        </span>
+        No accounts, no ads, no tracking, no analytics
+      </div>
+      <div class="glance-row">
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
+            <line x1="2.5" y1="9.5" x2="21.5" y2="9.5" />
+            <line x1="6" y1="14.5" x2="10" y2="14.5" />
+          </svg>
+        </span>
+        Purchases are handled by Apple; we never see payment details
+      </div>
+      <div class="glance-row">
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6.5 H20" />
+            <path d="M9 6.5 V4.8 C9 4 9.6 3.4 10.4 3.4 H13.6 C14.4 3.4 15 4 15 4.8 V6.5" />
+            <path d="M6 6.5 L6.8 19 C6.9 20 7.6 20.6 8.5 20.6 H15.5 C16.4 20.6 17.1 20 17.2 19 L18 6.5" />
+          </svg>
+        </span>
+        Delete everything anytime — your device, your data
+      </div>
     </div>
 
     <section>
@@ -134,12 +177,7 @@
         <li>Match history, scores and statistics</li>
         <li>Training sessions, drills, routines, weekly plans and your training profile (level, goals, focus areas)</li>
       </ul>
-      <p class="muted">This data never leaves your device unless you enable iCloud sync (below). We have no server and no access to it.</p>
-    </section>
-
-    <section>
-      <h2>iCloud sync (optional)</h2>
-      <p>If you use sync between your devices, Arras stores your data in your <em>private</em> iCloud database (Apple CloudKit), tied to your own Apple&nbsp;ID. Only your devices can read it. We cannot access, view or recover it, and Apple's <a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy policy</a> governs the iCloud service itself.</p>
+      <p class="muted">This data never leaves your device. Arras has no server, no user accounts, and no access to your data.</p>
     </section>
 
     <section>
@@ -166,12 +204,12 @@
 
     <section>
       <h2>Deleting your data</h2>
-      <p>You can delete individual profiles, matches and training data inside the app at any time. Deleting the app removes the entire local database. If you used iCloud sync, you can additionally remove Arras data from iCloud in your device's iCloud storage settings.</p>
+      <p>You can delete individual profiles, matches and training data inside the app at any time. Deleting the app removes the entire local database.</p>
     </section>
 
     <section>
       <h2>Your rights</h2>
-      <p>Under the GDPR and similar laws you have rights of access, rectification, erasure and portability. Because your data is stored on your own device and in your own iCloud rather than on our servers, you exercise these rights directly through the app and your device settings. For anything relating to purchase data held by RevenueCat, contact us and we will pass the request on.</p>
+      <p>Under the GDPR and similar laws you have rights of access, rectification, erasure and portability. Because your data is stored on your own device rather than on our servers, you exercise these rights directly through the app and your device settings. For anything relating to purchase data held by RevenueCat, contact us and we will pass the request on.</p>
     </section>
 
     <section>
